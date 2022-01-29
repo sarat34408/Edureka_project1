@@ -42,12 +42,12 @@
     - name: Run Docker container using php-demo-website
       docker_container:
         name: php-demo-website
-        image: kaleemsony/my-php-website
+        image: saratdevops/my-php-website
         state: started
         recreate: yes
         detach: true
         ports:
-          - "80:80"
+          - "8080:80"
       vars:
         ansible_python_interpreter: /usr/bin/python3
 
