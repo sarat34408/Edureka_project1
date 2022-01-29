@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker Build'){
             steps{
-                sh "docker build . -t edureka/my-php-website"
+                sh "docker build . -t saratdevops/edureka/my-php-website"
             }
         }
         stage('DockerHub Push'){
@@ -19,7 +19,7 @@ pipeline {
                       sh "docker login -u sarat34408 -p ${dockerPwd}"
                 }
                 
-                sh "docker push edureka/my-php-website"
+                sh "docker push saratdevops/edureka/my-php-website"
             }
         }
         stage('Install Python 3') {
