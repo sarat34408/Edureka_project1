@@ -9,17 +9,17 @@ pipeline {
         }
         stage('Docker Build'){
             steps{
-                sh "docker build . -t sarat34408/my-php-website"
+                sh "docker build . -t edureka/my-php-website"
             }
         }
         stage('DockerHub Push'){
             steps{
                 
-                withCredentials([string(credentialsId: 'sarat34408', variable: 'dockerPwd')]) {
+                withCredentials([string(credentialsId: 'docker_devops', variable: 'dockerPwd')]) {
                       sh "docker login -u sarat34408 -p ${dockerPwd}"
                 }
                 
-                sh "docker push sarat34408/my-php-website "
+                sh "docker push edureka/my-php-website"
             }
         }
         stage('Install Python 3') {
