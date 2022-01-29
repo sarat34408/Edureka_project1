@@ -16,7 +16,7 @@ pipeline {
             steps{
                 
                 withCredentials([string(credentialsId: 'docker_devops', variable: 'dockerPwd')]) {
-                      sh "docker login -u sarat34408 -p ${dockerPwd}"
+                      sh "docker login -u saratdevops -p ${dockerPwd}"
                 }
                 
                 sh "docker push saratdevops/my-php-website"
