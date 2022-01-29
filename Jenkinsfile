@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker Build'){
             steps{
-                sh "docker build . -t sarat34408/sarat34408/my-php-website"
+                sh "docker build . -t sarat34408/my-php-website"
             }
         }
         stage('DockerHub Push'){
@@ -19,7 +19,7 @@ pipeline {
                       sh "docker login -u sarat34408 -p ${dockerPwd}"
                 }
                 
-                sh "docker push sarat34408/sarat34408/my-php-website "
+                sh "docker push sarat34408/my-php-website "
             }
         }
         stage('Install Python 3') {
